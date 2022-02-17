@@ -26,10 +26,12 @@ public class Controller {
 
         Map<String, Integer> ortenMap = new HashMap<>();
 
+        //(anzahl_teilnehmer/max_anzahl_teilnehmer)*100
+
         for (Unternehmen ausflug :
                 this.repository.getAusfluge()) {
             if (ortenMap.containsKey(ausflug.getReiseziehl())) {
-                ortenMap.put(ausflug.getReiseziehl(), ortenMap.get(ausflug.getReiseziehl()) + ausflug.getPreisProPerson());
+                ortenMap.put((ausflug.getAnzahlTeilnehmer()/ ausflug.getMaxAnzahlTeilnehmer())*100);
             } else {
                 ortenMap.put(ausflug.getReiseziehl(), ausflug.getAnzahlTeilnehmer());
 
@@ -43,8 +45,8 @@ public class Controller {
 
 
         }
-    }*/
-/*
+    }
+
     public void topandSaveToFile() {
         this.repository.writeToFile2("statistik.txt",this.filterTOPbyMittelwert());
     }*/

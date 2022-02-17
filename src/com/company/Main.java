@@ -6,10 +6,10 @@ public class Main {
         Repository Repo = new Repository();
         Controller ctrl = new Controller(Repo);
         Repo.readFromFile();
-       // System.out.println(Repo.getAusfluge());
-        //System.out.println(ctrl.sortListeAusflugeBYAnzahlTeilnehmer());
+        System.out.println(Repo.getAusfluge());
+        System.out.println(ctrl.sortListeAusflugeBYAnzahlTeilnehmer());
         //System.out.println(ctrl.filterTOPbyMittelwert());
-        //ctrl.sortAndSaveToFile();
+        ctrl.sortAndSaveToFile();
         //ctrl.topandSaveToFile();
     }
 }

@@ -16,9 +16,9 @@ public class Repository {
         this.readFromFile();
     }
 
-    public void readFromFile() {
+    public List<Unternehmen> readFromFile() {
 
-        try (BufferedReader br = Files.newBufferedReader(Paths.get("C:\\Users\\Bianca\\IdeaProjects\\Restanta-Burzo-Bianca-Pr1\\src\\com\\company\\ausfluge.txt"))) {
+        try (BufferedReader br = Files.newBufferedReader(Paths.get("C:\\Users\\Bianca\\IdeaProjects\\Restanta-Burzo-Bianca-Pr1\\src\\ausfluge.txt"))) {
 
             // file delimiter
             String DELIMITER = "&&";
@@ -37,6 +37,7 @@ public class Repository {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        return this.ausfluge;
     }
 
     public void writeToFile1(String fileName, List<Unternehmen> ausflugeList) {
